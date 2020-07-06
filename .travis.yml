@@ -6,8 +6,9 @@ stages:
 
 jobs:
   include:
-  - language cpp
+  - language: cpp
     os: linux
     stage: forward
     dist: xenial
+    sudo: required
     script: echo 'Aoitori flying'

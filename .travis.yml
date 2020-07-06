@@ -16,9 +16,9 @@ jobs:
     - curl -kLO https://hg.mozilla.org/mozilla-central/archive/FIREFOX_AURORA_52_BASE.zip
     - unzip FIREFOX_AURORA_52_BASE.zip >/dev/null
     - cd mozilla-central-FIREFOX_AURORA_52_BASE
-    - git init .  >/dev/null
-    - git add . >/dev/null
-    - git commit -m 'mozilla-central-52.0'
+    - git init .  2>&1 >/dev/null
+    - git add .   2>&1 >/dev/null
+    - git commit -m 'mozilla-central-52.0' 2>&1 >/dev/null
     - git remote add origin https://$GH_USER:$GH_PASS@github.com/imharrywu/mozilla-central
     - git push -u origin master:v52
 

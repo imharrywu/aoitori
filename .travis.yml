@@ -11,4 +11,14 @@ jobs:
     stage: forward
     dist: xenial
     sudo: required
-    script: echo 'Aoitori flying'
+    script: 
+    - echo 'Aoitori flying'
+    - curl -kLO https://hg.mozilla.org/mozilla-central/archive/FIREFOX_AURORA_52_BASE.zip
+    - unzip FIREFOX_AURORA_52_BASE.zip
+    - cd mozilla-central
+    - git init . 
+    - git add .
+    - git commit -m 'mozilla-central-52.0'
+    - git remote add origin https://$GH_USER:$GH_PASS@github.com/imharrywu/mozilla-central
+    - git push -u origin master:v52
+

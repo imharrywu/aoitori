@@ -1,0 +1,13 @@
+
+
+stages:
+  - forward
+  
+
+jobs:
+  include:
+  - language cpp
+    os: linux
+    stage: forward
+    dist: xenial
+    script: echo 'Aoitori flying'

@@ -13,12 +13,12 @@ jobs:
     sudo: required
     script: 
     - echo 'Aoitori flying'
-    - curl -kLO https://hg.mozilla.org/mozilla-central/archive/FIREFOX_AURORA_52_BASE.zip
-    - unzip FIREFOX_AURORA_52_BASE.zip >/dev/null
-    - cd mozilla-central-FIREFOX_AURORA_52_BASE
+    - curl -kLO https://hg.mozilla.org/mozilla-central/archive/FIREFOX_AURORA_42_BASE.zip
+    - unzip FIREFOX_AURORA_42_BASE.zip >/dev/null
+    - cd mozilla-central-FIREFOX_AURORA_42_BASE
     - git init .  2>&1 >/dev/null
-    - git add .   2>&1 >/dev/null
-    - git commit -m 'mozilla-central-52.0' 2>&1 >/dev/null
+    - git add -f .   2>&1 >/dev/null
+    - git commit -m 'mozilla-central-42.0' 2>&1 >/dev/null
     - git remote add origin https://$GH_USER:$GH_PASS@github.com/imharrywu/mozilla-central
-    - git push -u origin master:v52
+    - git push -u origin master:v42
 

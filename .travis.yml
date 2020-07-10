@@ -13,12 +13,12 @@ jobs:
     sudo: required
     script:  # https://stackoverflow.com/questions/15143863/bash-colon-operator-in-variable-substitution
     - echo 'Aoitori flying'
-    - curl -kLO https://hg.mozilla.org/mozilla-central/archive/e4b11f027efc1f8c2710ae3f52487a8f10a8fb39.zip
-    - unzip e4b11f027efc1f8c2710ae3f52487a8f10a8fb39.zip >/dev/null
-    - cd $(find . -type d -iname "mozilla-central*" -maxdepth 1)
+    - curl -kLO https://hg.mozilla.org/mozilla-unified/archive/e56adbbfe01c2443bae35e3d6f34867e36c3828e.zip
+    - unzip e56adbbfe01c2443bae35e3d6f34867e36c3828e.zip >/dev/null
+    - cd $(find . -type d -iname "mozilla-*" -maxdepth 1)
     - git init .     2>&1 >/dev/null
     - git add -f .   2>&1 >/dev/null
-    - git commit -m 'mozilla-central-78beta.0' 2>&1 >/dev/null
+    - git commit -m 'mozilla-central-78.0.2' 2>&1 >/dev/null
     - git remote add origin https://$GH_USER:$GH_PASS@github.com/imharrywu/mozilla-central
-    - git push -u origin master:v78beta
+    - git push -u origin master:v78.0.2
 
